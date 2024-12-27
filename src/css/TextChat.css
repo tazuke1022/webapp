@@ -1,0 +1,134 @@
+/* TextChat用 CSS */
+/* ここから */
+.text-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.text-chat-input {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+.text-chat-input select {
+  flex: 0 1 auto;
+}
+
+.text-chat-input input {
+  flex: 1 1 auto;
+}
+
+.text-chat-input button {
+  flex: 0 1 auto;
+}
+
+.text-chat-message-list-container {
+  height: 12rem;
+  border: 1px dotted grey;
+  overflow: auto;
+  background-color: hsl(235, 100%, 95%);
+}
+
+.text-chat-message-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+  padding: 0.3rem;
+  gap: 0.3rem;
+}
+
+.text-chat-from-me {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text-chat-from-me .text-chat-message {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-chat-from-me .text-chat-from {
+  display: none;
+}
+
+.text-chat-from-me .text-chat-message-body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  background-color: hsl(235, 100%, 90%);
+}
+
+.text-chat-from-me .text-chat-message-body div {
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.text-chat-from-me .text-chat-message-body img {
+  height: 2rem;
+  border: 1px dotted gray;
+  background-color: white;
+}
+
+.text-chat-from-me .text-chat-message-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  clip-path: polygon(25% 25%, 75% 25%, 100% 0);
+  background-color: hsl(235, 100%, 90%);
+}
+
+.text-chat-from-them {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.text-chat-from-them .text-chat-message {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-chat-from-them .text-chat-message-body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.2rem;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  background-color: white;
+}
+
+.text-chat-from-them .text-chat-message-body div {
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+.text-chat-from-them .text-chat-message-body img {
+  height: 2rem;
+  border: 1px dotted gray;
+  background-color: white;
+}
+
+.text-chat-from-them .text-chat-message-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  clip-path: polygon(75% 25%, 25% 25%, 0% 0);
+  background-color: white;
+}
+/* ここまで */

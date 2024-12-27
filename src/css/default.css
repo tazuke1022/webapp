@@ -1,0 +1,166 @@
+/* [参考例] 共通の CSS */
+/* box-sizingを使用する． */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* 簡易な共通の色の設定 */
+*,
+*::before,
+*::after {
+  --primary-hue: 207;
+  --secondary-hue: 0;
+  --info-hue: 130;
+  --error-hue: 5;
+  --hue: var(--primary-hue);
+}
+
+@media screen and (min-width: 600px) {
+  /* PC画面では両端にマージンをあける． */
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+
+  /* .containerを使う時は，bodyのマージンを0にする．*/
+  body:has(.container) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* 表紙 */
+.cover-page {
+  /* name-boxをcover-pageの中に納める */
+  position: relative;
+}
+
+.cover-page p {
+  margin: 0;
+}
+
+.cover-page ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.cover-page .link-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* 課題のページ */
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.3rem;
+}
+
+.head h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* 学生証番号と名前 */
+.namebox {
+  text-align: right;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px dotted hsl(var(--hue), 100%, 40%);
+}
+
+/* ボタン風のデザイン */
+.btn {
+  --hue: var(--primary-hue);
+  color: hsl(var(--hue), 100%, 33%);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--hue), 100%, 33%);
+  user-select: none;
+  text-align: center;
+}
+
+.btn:hover {
+  color: hsl(var(--hue), 100%, 98%);
+  background: hsl(var(--hue), 100%, 33%);
+}
+
+.btn:active {
+  background: hsl(var(--hue), 100%, 25%);
+  border-color: hsl(var(--hue), 100%, 25%);
+}
+
+/* エラーメッセージの表示 */
+.error-message {
+  --hue: var(--error-hue);
+  color: hsl(var(--hue), 100%, 27%);
+  background-color: hsla(var(--error-hue), 100%, 90%);
+  margin: 4px 0 0 0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.error-message:hover {
+  cursor: pointer;
+}
+
+.error-message::before {
+  --hue: var(--error-hue);
+  content: "\02715";
+  /* &times; */
+  background-color: hsl(var(--hue), 100%, 90%);
+  border: 1px solid hsl(var(--hue), 100%, 33%);
+  border-radius: 4px;
+  margin-right: 8px;
+  width: 1.2rem;
+  height: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 情報の出力エリア */
+.output {
+  --hue: var(--info-hue);
+  border: 1px dotted hsl(var(--hue), 100%, 50%);
+  background-color: hsl(var(--hue), 100%, 95%);
+  font-family: monospace;
+  font-size: large;
+}
+
+/* 横に並べる． */
+.cols-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* 2コラムを指定: それぞれのコラムはdivで囲まれていると仮定 */
+.cols-wrap.two-cols > div {
+  /* gapを考慮する． */
+  flex: 0 1 calc(50% - 0.5rem);
+}
+
+/* 縦に並べる． */
+.rows-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

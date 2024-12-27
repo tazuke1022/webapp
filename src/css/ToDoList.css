@@ -1,0 +1,157 @@
+/* ToDoリスト用 CSS */
+/* ここから */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.todo-list-head span {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.todo-list-head label {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #666;
+}
+
+.todo-list-head label input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.todo-list-task-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.todo-list-task-input input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-list-task-input select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-list-task-input input[type="date"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-list-task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.todo-list-description {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.todo-list-completed .todo-list-description {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-list-priority {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.todo-list-deadline {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.todo-list-username {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.todo-list-task button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.todo-list-task button:hover {
+  background-color: #0056b3;
+}
+
+.todo-list-overdue {
+  background-color: hsl(0, 87%, 90%);
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ffcdd2;
+  color: #c62828;
+  border: 1px solid #c62828;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.circle-blue {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #3498db; /* ブルー */
+}
+
+.circle-orange {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #f39c12; /* オレンジ */
+}
+
+.circle-purple {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #9b59b6; /* パープル */
+}
+
+/* ここまで */
+

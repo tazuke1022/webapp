@@ -1,0 +1,42 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Web Application Sample",
+  "scripts": {
+    "start": "node app.js",
+    "build": "parcel build ./src/index.html",
+    "dev": "parcel watch ./src/index.html"
+  },
+  "browserslist": [
+    "last 1 chrome version",
+    "last 1 firefox version"
+  ],
+  "hintConfig": {
+    "extends": [
+      "development"
+    ],
+    "hints": {
+      "detect-css-reflows/layout": "off",
+      "detect-css-reflows/composite": "off",
+      "detect-css-reflows/paint": "off"
+    }
+  },
+  "alias": {
+    "socket.io-client": "socket.io/client-dist/socket.io"
+  },
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  }
+}

@@ -1,0 +1,38 @@
+/* [参考例] Authenticate コンポーネント用の CSS クラス */
+
+.authenticate-login {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  > label {
+    display: flex;
+    gap: 0.3rem;
+
+    > span:first-child {
+      flex: 1 2 50%;
+      text-align: right;
+    }
+
+    > span:nth-child(2) {
+      flex: 1 1 50%;
+      text-align: left;
+    }
+  }
+
+  input {
+    font-size: 100%;
+    width: 8rem;
+  }
+
+  > button {
+    align-self: center;
+  }
+}
+
+.authenticate-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}

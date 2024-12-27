@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "【提出用ZIPファイルの作成】",
+      "type": "shell",
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "${env:SystemRoot}\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+          }
+        },
+        "command": "Compress-Archive",
+        "args": [
+          "-DestinationPath",
+          "\\\"${workspaceFolderBasename}_$(Get-Date -UFormat %y%m%d%H%M%S)\\\"",
+          "-Path",
+          "*.*js*,*.ico,.env,*.md,src,routes,.vscode"
+        ]
+      },
+      "osx": {
+        "command": "zip -X -r \"${workspaceFolderBasename}_`date +\"%y%m%d%H%M%S\"`.zip\" . -i *.*js* *.ico .env *.md src/* src/**/* routes/* .vscode/*"
+      },
+      "linux": {
+        "command": "zip -X -r \"${workspaceFolderBasename}_`date +\"%y%m%d%H%M%S\"`.zip\" . -i *.*js* *.ico .env *.md src/* src/**/* routes/* .vscode/*"
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "【ビルド】npm: build",
+      "detail": "parcel build src/index.html"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "【開発サーバ起動】npm: dev",
+      "detail": "parcel watch ./src/index.html"
+    }
+  ]
+}

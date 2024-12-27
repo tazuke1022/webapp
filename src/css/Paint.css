@@ -1,0 +1,33 @@
+/* [参考例] Paint用の CSS */
+
+/* paint-control をcanvasの下に配置する． */
+.paint {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+
+  /* Canvasエリアを明示する． */
+  canvas {
+    border: 1px dotted grey;
+  }
+
+  .paint-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+
+    label {
+      display: flex;
+      gap: 0.1rem;
+    }
+
+    /* ペンサイズ */
+    input[type="number"] {
+      width: 3rem;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+/* [参考例] WithSocket コンポーネント用の CSS クラス */
+
+.with-socket {
+  display: flex;
+  gap: 0.3rem;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
+
+  .with-socket-control {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    justify-content: flex-start;
+  }
+
+  .with-socket-control span::before {
+    content: '[';
+  }
+
+  .with-socket-control span::after {
+    content: ']';
+  }
+
+  .with-socket-disconnected {
+    color: hsl(var(--error-hue), 100%, 40%);
+  }
+}

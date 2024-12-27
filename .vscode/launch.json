@@ -1,0 +1,67 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node-terminal",
+      "name": "【Webサーバ起動】Run Script: start",
+      "request": "launch",
+      "command": "npm run start",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "msedge",
+      "name": "【ブラウザ】Launch Microsoft Edge",
+      "request": "launch",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222"
+      ],
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "type": "msedge",
+      "name": "【ヘッドレスブラウザ】Launch Microsoft Edge in headless mode",
+      "request": "launch",
+      "runtimeArgs": [
+        "--headless",
+        "--remote-debugging-port=9222"
+      ],
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "type": "vscode-edge-devtools.debug",
+      "name": "Open Edge DevTools",
+      "request": "attach",
+      "url": "http://localhost:3000",
+      "presentation": {
+        "hidden": true
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "【ブラウザとDevTools】Launch Edge and attach DevTools",
+      "configurations": [
+        "【ブラウザ】Launch Microsoft Edge",
+        "Open Edge DevTools"
+      ]
+    },
+    {
+      "name": "【ヘッドレスブラウザとDevTools】Launch Edge in headless mode and attach DevTools",
+      "configurations": [
+        "【ヘッドレスブラウザ】Launch Microsoft Edge in headless mode",
+        "Open Edge DevTools"
+      ],
+      "presentation": {
+        "hidden": true,
+      }
+    }
+  ]
+}
